@@ -36,7 +36,61 @@
           $("#save_server").bind("click", function(e) {
             e.preventDefault();
           });
-        })
+
+        if (window.DeviceOrientationEvent) {  
+          window.addEventListener("deviceorientation", function(event) {
+             /*if(event.absolute) { //do we need to worry about absolute?
+              $(".absolute").show();
+            } else
+            {
+              $(".absolute").hide();
+            }*/
+            //color for painting on the canvas
+            ctx.fillStyle = "orange";
+            //clear
+            ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
+
+            //alpha: rotation around z-axis  
+            ctx.fillText(event.alpha,0,0);
+
+            //gamma: left to right  
+            ctx.fillText(event.beta,10,10);
+
+            //beta: front back motion  
+            ctx.fillText(event.gamma,20,20);
+          }, false);
+        }  
+        if (window.DeviceMotionEvent) {  
+          window.addEventListener("devicemotion", function( event ) {  
+            // Grab the acceleration including gravity from the results
+            var acceleration = event.accelerationIncludingGravity;
+            // Display the raw acceleration data
+            var rawAcceleration = "[" +  Math.round(acceleration.x*1000) + ", " + 
+              Math.round(acceleration.y*1000) + ", " + Math.round(acceleration.z*1000) + "]";
+            $(".acceleration").html(rawAcceleration);
+          }, false);
+        }
+
+        function deviceOrientationChanged( event ) {  
+            /*if(event.absolute) { //do we need to worry about absolute?
+              $(".absolute").show();
+            } else
+            {
+              $(".absolute").hide();
+            }*/
+            //color for painting on the canvas
+            ctx.fillStyle = "orange";
+
+            //alpha: rotation around z-axis  
+            ctx.fillText(event.alpha,0,0);
+
+            //gamma: left to right  
+            ctx.fillText(event.beta,10,10);
+
+            //beta: front back motion  
+            ctx.fillText(event.gamma,20,20);
+          } 
+      });
       //]]>
     </script>
   </head>
