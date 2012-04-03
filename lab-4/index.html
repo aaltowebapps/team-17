@@ -39,25 +39,7 @@
 
         if (window.DeviceOrientationEvent) {  
           window.addEventListener("deviceorientation", function(event) {
-             /*if(event.absolute) { //do we need to worry about absolute?
-              $(".absolute").show();
-            } else
-            {
-              $(".absolute").hide();
-            }*/
-            //color for painting on the canvas
-            ctx.fillStyle = "orange";
-            //clear
-            ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
-
-            //alpha: rotation around z-axis  
-            ctx.fillText(event.alpha,0,0);
-
-            //gamma: left to right  
-            ctx.fillText(event.beta,10,10);
-
-            //beta: front back motion  
-            ctx.fillText(event.gamma,20,20);
+            deviceOrientationChanged( event );
           }, false);
         }  
         if (window.DeviceMotionEvent) {  
@@ -72,7 +54,7 @@
         }
 
         function deviceOrientationChanged( event ) {  
-            /*if(event.absolute) { //do we need to worry about absolute?
+             /*if(event.absolute) { //do we need to worry about absolute?
               $(".absolute").show();
             } else
             {
@@ -80,15 +62,17 @@
             }*/
             //color for painting on the canvas
             ctx.fillStyle = "orange";
+            //clear
+            ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
 
             //alpha: rotation around z-axis  
-            ctx.fillText(event.alpha,0,0);
+            ctx.fillText("Alpha: " + event.alpha, 20, 30);
 
             //gamma: left to right  
-            ctx.fillText(event.beta,10,10);
+            ctx.fillText("Beta: " + event.beta, 20, 50);
 
             //beta: front back motion  
-            ctx.fillText(event.gamma,20,20);
+            ctx.fillText("Gamma: " + event.gamma, 20, 70);
           } 
       });
       //]]>
