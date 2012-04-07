@@ -12,6 +12,7 @@ GEM
     tilt (1.3.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES

@@ -1,0 +1,22 @@
+-# The structure of a route listing can be seen in public/sampleroute.json
+%script{:id => "routes", :type => "text/x-handlebars-template"}
+  %ul{:data => {:role => "listview"}}
+    -# Go through the array of routes and select the single item in each
+    {{#each []}}
+    {{#with [0]}}
+    %li
+      %p.ui-li-aside
+        {{length}}
+      %h3
+        {{duration}}
+      %ul
+      -# List each part of the route
+        {{#legs}}
+        %li
+          %h4
+            {{type}}
+          %p.ul-li-aside
+            {{length}}
+        {{/legs}}
+    {{/with}}
+    {{/each}}

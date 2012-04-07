@@ -7,9 +7,13 @@
 		%link(rel="stylesheet" href="jquery/jquery.mobile-1.0.1.min.css")
 		%script(type="text/javascript" src="jquery/jquery-1.7.1.min.js")
 		%script(type="text/javascript" src="jquery/jquery.mobile-1.0.1.min.js")
+		%script(type="text/javascript" src="js/handlebars-1.0.0.beta.6.js")
 		%title
 			ReittiSpeedDial
+
+		%script(type="text/javascript" src="js/reittiopas.js")
 	%body
+		= haml :templates
 		= yield
 
 				
