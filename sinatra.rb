@@ -22,7 +22,12 @@ class ReittiSuperDial < Sinatra::Base
 		uri.query = URI.encode_www_form( params )
 
 		# Get response and pass to user
-		uri.open.read
+		begin
+			uri.open.read
+		rescue SystemCallError, SocketError
+			# this is just for being able to test the UI offline
+  			send_file File.join(settings.public_folder, 'sampleroute.json')
+		end
 	end
 	
 end

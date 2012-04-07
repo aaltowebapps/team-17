@@ -1,0 +1,1479 @@
+[
+  [
+    {
+      "length": 64171.538,
+      "duration": 8880,
+      "legs": [
+        {
+          "length": 64,
+          "duration": 48.6,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2561133,
+                "y": 6699755
+              },
+              "arrTime": "201204061819",
+              "depTime": "201204061819",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2561135.8,
+                "y": 6699811.1
+              },
+              "arrTime": "201204061820",
+              "depTime": "201204061820",
+              "name": "Ilmattarentie"
+            },
+            {
+              "coord": {
+                "x": 2561135,
+                "y": 6699812
+              },
+              "arrTime": "201204061820",
+              "depTime": "201204061820",
+              "name": "Kerava\/VR",
+              "code": "9040502",
+              "shortCode": "Ke0402",
+              "stopAddress": "Keravan asema"
+            }
+          ]
+        },
+        {
+          "length": 25645,
+          "duration": 960,
+          "type": "12",
+          "code": "3001R 2",
+          "locs": [
+            {
+              "coord": {
+                "x": 2561135,
+                "y": 6699812
+              },
+              "arrTime": "201204061820",
+              "depTime": "201204061820",
+              "name": "Kerava\/VR",
+              "code": "9040502",
+              "shortCode": "Ke0402",
+              "stopAddress": "Keravan asema"
+            },
+            {
+              "coord": {
+                "x": 2557908,
+                "y": 6687213
+              },
+              "arrTime": "201204061828",
+              "depTime": "201204061828",
+              "name": "Tikkurila\/VR",
+              "code": "4610551",
+              "shortCode": "V6151",
+              "stopAddress": "Asematie 1"
+            },
+            {
+              "coord": {
+                "x": 2551969,
+                "y": 6676765
+              },
+              "arrTime": "201204061836",
+              "depTime": "201204061836",
+              "name": "Pasila\/VR",
+              "code": "1174551",
+              "shortCode": "0071",
+              "stopAddress": "Ratapihantie 6"
+            }
+          ]
+        },
+        {
+          "length": 83,
+          "duration": 71.16,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2551969,
+                "y": 6676765
+              },
+              "arrTime": "201204061836",
+              "depTime": "201204061836",
+              "name": "Pasila\/VR",
+              "code": "1174551",
+              "shortCode": "0071",
+              "stopAddress": "Ratapihantie 6"
+            },
+            {
+              "coord": {
+                "x": 2551976.5,
+                "y": 6676759.8
+              },
+              "arrTime": "201204061836",
+              "depTime": "201204061836",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2551919.4,
+                "y": 6676745.6
+              },
+              "arrTime": "201204061837",
+              "depTime": "201204061837",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2551921,
+                "y": 6676754
+              },
+              "arrTime": "201204061837",
+              "depTime": "201204061842",
+              "name": "Pasila\/VR",
+              "code": "1174502",
+              "shortCode": "0071",
+              "stopAddress": "Pasilan asema"
+            }
+          ]
+        },
+        {
+          "length": 31873,
+          "duration": 2040,
+          "type": "12",
+          "code": "3002U 1",
+          "locs": [
+            {
+              "coord": {
+                "x": 2551921,
+                "y": 6676754
+              },
+              "arrTime": "201204061837",
+              "depTime": "201204061842",
+              "name": "Pasila\/VR",
+              "code": "1174502",
+              "shortCode": "0071",
+              "stopAddress": "Pasilan asema"
+            },
+            {
+              "coord": {
+                "x": 2549700,
+                "y": 6678878
+              },
+              "arrTime": "201204061845",
+              "depTime": "201204061845",
+              "name": "Huopalahti\/VR",
+              "code": "1291501",
+              "shortCode": "0079",
+              "stopAddress": "Kyl\u00e4tie 25"
+            },
+            {
+              "coord": {
+                "x": 2545255,
+                "y": 6678951
+              },
+              "arrTime": "201204061849",
+              "depTime": "201204061849",
+              "name": "Lepp\u00e4vaara\/VR",
+              "code": "2111502",
+              "shortCode": "E1057",
+              "stopAddress": "Lepp\u00e4polku"
+            },
+            {
+              "coord": {
+                "x": 2543597,
+                "y": 6678753
+              },
+              "arrTime": "201204061851",
+              "depTime": "201204061851",
+              "name": "Kilo\/VR",
+              "code": "2131501",
+              "shortCode": "E1330",
+              "stopAddress": "Lansanpurontie"
+            },
+            {
+              "coord": {
+                "x": 2541953,
+                "y": 6678521
+              },
+              "arrTime": "201204061853",
+              "depTime": "201204061853",
+              "name": "Kera\/VR",
+              "code": "2132502",
+              "shortCode": "E1832",
+              "stopAddress": "Nihtim\u00e4entie"
+            },
+            {
+              "coord": {
+                "x": 2540789,
+                "y": 6678058
+              },
+              "arrTime": "201204061856",
+              "depTime": "201204061856",
+              "name": "Kauniainen\/VR",
+              "code": "3010501",
+              "shortCode": "Ka0101",
+              "stopAddress": "Gresantie 17"
+            },
+            {
+              "coord": {
+                "x": 2539159,
+                "y": 6677472
+              },
+              "arrTime": "201204061858",
+              "depTime": "201204061858",
+              "name": "Koivuhovi\/VR",
+              "code": "2161501",
+              "shortCode": "E1606",
+              "stopAddress": "Koivuhovintie"
+            },
+            {
+              "coord": {
+                "x": 2538082,
+                "y": 6677378
+              },
+              "arrTime": "201204061900",
+              "depTime": "201204061900",
+              "name": "Tuomarila\/VR",
+              "code": "2612501",
+              "shortCode": "E6059",
+              "stopAddress": "Tuomarilantie"
+            },
+            {
+              "coord": {
+                "x": 2536580,
+                "y": 6677244
+              },
+              "arrTime": "201204061902",
+              "depTime": "201204061902",
+              "name": "Espoo\/VR",
+              "code": "2611502",
+              "shortCode": "E6038",
+              "stopAddress": "Espoonsilta"
+            },
+            {
+              "coord": {
+                "x": 2533459,
+                "y": 6675446
+              },
+              "arrTime": "201204061905",
+              "depTime": "201204061905",
+              "name": "Kauklahti\/VR",
+              "code": "2511501",
+              "shortCode": "E5141",
+              "stopAddress": "Hansatie 3"
+            },
+            {
+              "coord": {
+                "x": 2532447,
+                "y": 6674984
+              },
+              "arrTime": "201204061906",
+              "depTime": "201204061906",
+              "name": "Mankki\/VR",
+              "code": "2521501",
+              "shortCode": "E5214",
+              "stopAddress": "Lasilaaksontie 10"
+            },
+            {
+              "coord": {
+                "x": 2530688,
+                "y": 6673511
+              },
+              "arrTime": "201204061908",
+              "depTime": "201204061908",
+              "name": "Luoma\/VR",
+              "code": "6010502",
+              "shortCode": "Ki0102"
+            },
+            {
+              "coord": {
+                "x": 2530086,
+                "y": 6672003
+              },
+              "arrTime": "201204061911",
+              "depTime": "201204061911",
+              "name": "Masala\/VR",
+              "code": "6010503",
+              "shortCode": "Ki0103"
+            },
+            {
+              "coord": {
+                "x": 2528650,
+                "y": 6669686
+              },
+              "arrTime": "201204061913",
+              "depTime": "201204061913",
+              "name": "Jorvas\/VR",
+              "code": "6010504",
+              "shortCode": "Ki0104"
+            },
+            {
+              "coord": {
+                "x": 2526351,
+                "y": 6667430
+              },
+              "arrTime": "201204061916",
+              "depTime": "201204061916",
+              "name": "Tolsa\/VR",
+              "code": "6010505",
+              "shortCode": "Ki0105"
+            }
+          ]
+        },
+        {
+          "length": 6504,
+          "duration": 5521.5,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2526351,
+                "y": 6667430
+              },
+              "arrTime": "201204061916",
+              "depTime": "201204061916",
+              "name": "Tolsa\/VR",
+              "code": "6010505",
+              "shortCode": "Ki0105"
+            },
+            {
+              "coord": {
+                "x": 2526285.1,
+                "y": 6667392.9
+              },
+              "arrTime": "201204061917",
+              "depTime": "201204061917",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2526457.8,
+                "y": 6667262.3
+              },
+              "arrTime": "201204061921",
+              "depTime": "201204061921",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526444.4,
+                "y": 6667239.1
+              },
+              "arrTime": "201204061921",
+              "depTime": "201204061921",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526479.6,
+                "y": 6666693.6
+              },
+              "arrTime": "201204061930",
+              "depTime": "201204061930",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526686.9,
+                "y": 6666257.7
+              },
+              "arrTime": "201204061937",
+              "depTime": "201204061937",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526843.1,
+                "y": 6666143.7
+              },
+              "arrTime": "201204061940",
+              "depTime": "201204061940",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526835.7,
+                "y": 6666119.8
+              },
+              "arrTime": "201204061940",
+              "depTime": "201204061940",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526918.7,
+                "y": 6665956.5
+              },
+              "arrTime": "201204061943",
+              "depTime": "201204061943",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527203,
+                "y": 6665859.9
+              },
+              "arrTime": "201204061948",
+              "depTime": "201204061948",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527684.9,
+                "y": 6665418.8
+              },
+              "arrTime": "201204061959",
+              "depTime": "201204061959",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527934.3,
+                "y": 6665211
+              },
+              "arrTime": "201204062003",
+              "depTime": "201204062003",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527801.7,
+                "y": 6663440.8
+              },
+              "arrTime": "201204062031",
+              "depTime": "201204062031",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527895.8,
+                "y": 6663286.7
+              },
+              "arrTime": "201204062034",
+              "depTime": "201204062034",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2528069.6,
+                "y": 6662737
+              },
+              "arrTime": "201204062043",
+              "depTime": "201204062043",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527905.8,
+                "y": 6662580.5
+              },
+              "arrTime": "201204062046",
+              "depTime": "201204062046",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2527815,
+                "y": 6662705
+              },
+              "arrTime": "201204062048",
+              "depTime": "201204062048",
+              "name": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "length": 67947.797,
+      "duration": 9780,
+      "legs": [
+        {
+          "length": 64,
+          "duration": 48.6,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2561133,
+                "y": 6699755
+              },
+              "arrTime": "201204061848",
+              "depTime": "201204061848",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2561135.8,
+                "y": 6699811.1
+              },
+              "arrTime": "201204061849",
+              "depTime": "201204061849",
+              "name": "Ilmattarentie"
+            },
+            {
+              "coord": {
+                "x": 2561135,
+                "y": 6699812
+              },
+              "arrTime": "201204061849",
+              "depTime": "201204061849",
+              "name": "Kerava\/VR",
+              "code": "9040502",
+              "shortCode": "Ke0402",
+              "stopAddress": "Keravan asema"
+            }
+          ]
+        },
+        {
+          "length": 25645,
+          "duration": 1080,
+          "type": "12",
+          "code": "3001H 2",
+          "locs": [
+            {
+              "coord": {
+                "x": 2561135,
+                "y": 6699812
+              },
+              "arrTime": "201204061849",
+              "depTime": "201204061849",
+              "name": "Kerava\/VR",
+              "code": "9040502",
+              "shortCode": "Ke0402",
+              "stopAddress": "Keravan asema"
+            },
+            {
+              "coord": {
+                "x": 2557908,
+                "y": 6687213
+              },
+              "arrTime": "201204061858",
+              "depTime": "201204061858",
+              "name": "Tikkurila\/VR",
+              "code": "4610551",
+              "shortCode": "V6151",
+              "stopAddress": "Asematie 1"
+            },
+            {
+              "coord": {
+                "x": 2551969,
+                "y": 6676765
+              },
+              "arrTime": "201204061907",
+              "depTime": "201204061907",
+              "name": "Pasila\/VR",
+              "code": "1174551",
+              "shortCode": "0071",
+              "stopAddress": "Ratapihantie 6"
+            }
+          ]
+        },
+        {
+          "length": 83,
+          "duration": 71.16,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2551969,
+                "y": 6676765
+              },
+              "arrTime": "201204061907",
+              "depTime": "201204061907",
+              "name": "Pasila\/VR",
+              "code": "1174551",
+              "shortCode": "0071",
+              "stopAddress": "Ratapihantie 6"
+            },
+            {
+              "coord": {
+                "x": 2551976.5,
+                "y": 6676759.8
+              },
+              "arrTime": "201204061907",
+              "depTime": "201204061907",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2551919.4,
+                "y": 6676745.6
+              },
+              "arrTime": "201204061908",
+              "depTime": "201204061908",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2551921,
+                "y": 6676754
+              },
+              "arrTime": "201204061908",
+              "depTime": "201204061912",
+              "name": "Pasila\/VR",
+              "code": "1174502",
+              "shortCode": "0071",
+              "stopAddress": "Pasilan asema"
+            }
+          ]
+        },
+        {
+          "length": 33745,
+          "duration": 2100,
+          "type": "12",
+          "code": "3002S 1",
+          "locs": [
+            {
+              "coord": {
+                "x": 2551921,
+                "y": 6676754
+              },
+              "arrTime": "201204061908",
+              "depTime": "201204061912",
+              "name": "Pasila\/VR",
+              "code": "1174502",
+              "shortCode": "0071",
+              "stopAddress": "Pasilan asema"
+            },
+            {
+              "coord": {
+                "x": 2549700,
+                "y": 6678878
+              },
+              "arrTime": "201204061915",
+              "depTime": "201204061915",
+              "name": "Huopalahti\/VR",
+              "code": "1291501",
+              "shortCode": "0079",
+              "stopAddress": "Kyl\u00e4tie 25"
+            },
+            {
+              "coord": {
+                "x": 2545255,
+                "y": 6678951
+              },
+              "arrTime": "201204061919",
+              "depTime": "201204061919",
+              "name": "Lepp\u00e4vaara\/VR",
+              "code": "2111502",
+              "shortCode": "E1057",
+              "stopAddress": "Lepp\u00e4polku"
+            },
+            {
+              "coord": {
+                "x": 2543597,
+                "y": 6678753
+              },
+              "arrTime": "201204061921",
+              "depTime": "201204061921",
+              "name": "Kilo\/VR",
+              "code": "2131501",
+              "shortCode": "E1330",
+              "stopAddress": "Lansanpurontie"
+            },
+            {
+              "coord": {
+                "x": 2541953,
+                "y": 6678521
+              },
+              "arrTime": "201204061923",
+              "depTime": "201204061923",
+              "name": "Kera\/VR",
+              "code": "2132502",
+              "shortCode": "E1832",
+              "stopAddress": "Nihtim\u00e4entie"
+            },
+            {
+              "coord": {
+                "x": 2540789,
+                "y": 6678058
+              },
+              "arrTime": "201204061926",
+              "depTime": "201204061926",
+              "name": "Kauniainen\/VR",
+              "code": "3010501",
+              "shortCode": "Ka0101",
+              "stopAddress": "Gresantie 17"
+            },
+            {
+              "coord": {
+                "x": 2539159,
+                "y": 6677472
+              },
+              "arrTime": "201204061928",
+              "depTime": "201204061928",
+              "name": "Koivuhovi\/VR",
+              "code": "2161501",
+              "shortCode": "E1606",
+              "stopAddress": "Koivuhovintie"
+            },
+            {
+              "coord": {
+                "x": 2538082,
+                "y": 6677378
+              },
+              "arrTime": "201204061930",
+              "depTime": "201204061930",
+              "name": "Tuomarila\/VR",
+              "code": "2612501",
+              "shortCode": "E6059",
+              "stopAddress": "Tuomarilantie"
+            },
+            {
+              "coord": {
+                "x": 2536580,
+                "y": 6677244
+              },
+              "arrTime": "201204061932",
+              "depTime": "201204061932",
+              "name": "Espoo\/VR",
+              "code": "2611502",
+              "shortCode": "E6038",
+              "stopAddress": "Espoonsilta"
+            },
+            {
+              "coord": {
+                "x": 2533459,
+                "y": 6675446
+              },
+              "arrTime": "201204061935",
+              "depTime": "201204061935",
+              "name": "Kauklahti\/VR",
+              "code": "2511501",
+              "shortCode": "E5141",
+              "stopAddress": "Hansatie 3"
+            },
+            {
+              "coord": {
+                "x": 2530086,
+                "y": 6672003
+              },
+              "arrTime": "201204061940",
+              "depTime": "201204061940",
+              "name": "Masala\/VR",
+              "code": "6010503",
+              "shortCode": "Ki0103"
+            },
+            {
+              "coord": {
+                "x": 2524580,
+                "y": 6667639
+              },
+              "arrTime": "201204061947",
+              "depTime": "201204061947",
+              "name": "Kirkkonummi\/VR",
+              "code": "6010501",
+              "shortCode": "Ki0101"
+            }
+          ]
+        },
+        {
+          "length": 30,
+          "duration": 25.98,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2524580,
+                "y": 6667639
+              },
+              "arrTime": "201204061947",
+              "depTime": "201204061947",
+              "name": "Kirkkonummi\/VR",
+              "code": "6010501",
+              "shortCode": "Ki0101"
+            },
+            {
+              "coord": {
+                "x": 2524580,
+                "y": 6667639
+              },
+              "arrTime": "201204061947",
+              "depTime": "201204061958",
+              "name": "Kirkkonummi\/VR",
+              "code": "6010551",
+              "shortCode": "Ki0151"
+            }
+          ]
+        },
+        {
+          "length": 1874,
+          "duration": 120,
+          "type": "12",
+          "code": "3002U 2",
+          "locs": [
+            {
+              "coord": {
+                "x": 2524580,
+                "y": 6667639
+              },
+              "arrTime": "201204061947",
+              "depTime": "201204061958",
+              "name": "Kirkkonummi\/VR",
+              "code": "6010551",
+              "shortCode": "Ki0151"
+            },
+            {
+              "coord": {
+                "x": 2526351,
+                "y": 6667430
+              },
+              "arrTime": "201204062000",
+              "depTime": "201204062000",
+              "name": "Tolsa\/VR",
+              "code": "6010555",
+              "shortCode": "Ki0155"
+            }
+          ]
+        },
+        {
+          "length": 6504,
+          "duration": 5521.5,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2526351,
+                "y": 6667430
+              },
+              "arrTime": "201204062000",
+              "depTime": "201204062000",
+              "name": "Tolsa\/VR",
+              "code": "6010555",
+              "shortCode": "Ki0155"
+            },
+            {
+              "coord": {
+                "x": 2526285.1,
+                "y": 6667392.9
+              },
+              "arrTime": "201204062001",
+              "depTime": "201204062001",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2526457.8,
+                "y": 6667262.3
+              },
+              "arrTime": "201204062005",
+              "depTime": "201204062005",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526444.4,
+                "y": 6667239.1
+              },
+              "arrTime": "201204062005",
+              "depTime": "201204062005",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526479.6,
+                "y": 6666693.6
+              },
+              "arrTime": "201204062014",
+              "depTime": "201204062014",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526686.9,
+                "y": 6666257.7
+              },
+              "arrTime": "201204062021",
+              "depTime": "201204062021",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526843.1,
+                "y": 6666143.7
+              },
+              "arrTime": "201204062024",
+              "depTime": "201204062024",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526835.7,
+                "y": 6666119.8
+              },
+              "arrTime": "201204062024",
+              "depTime": "201204062024",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526918.7,
+                "y": 6665956.5
+              },
+              "arrTime": "201204062027",
+              "depTime": "201204062027",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527203,
+                "y": 6665859.9
+              },
+              "arrTime": "201204062032",
+              "depTime": "201204062032",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527684.9,
+                "y": 6665418.8
+              },
+              "arrTime": "201204062043",
+              "depTime": "201204062043",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527934.3,
+                "y": 6665211
+              },
+              "arrTime": "201204062047",
+              "depTime": "201204062047",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527801.7,
+                "y": 6663440.8
+              },
+              "arrTime": "201204062115",
+              "depTime": "201204062115",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527895.8,
+                "y": 6663286.7
+              },
+              "arrTime": "201204062118",
+              "depTime": "201204062118",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2528069.6,
+                "y": 6662737
+              },
+              "arrTime": "201204062127",
+              "depTime": "201204062127",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527905.8,
+                "y": 6662580.5
+              },
+              "arrTime": "201204062130",
+              "depTime": "201204062130",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2527815,
+                "y": 6662705
+              },
+              "arrTime": "201204062132",
+              "depTime": "201204062132",
+              "name": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "length": 64171.538,
+      "duration": 8880,
+      "legs": [
+        {
+          "length": 64,
+          "duration": 48.6,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2561133,
+                "y": 6699755
+              },
+              "arrTime": "201204061919",
+              "depTime": "201204061919",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2561135.8,
+                "y": 6699811.1
+              },
+              "arrTime": "201204061920",
+              "depTime": "201204061920",
+              "name": "Ilmattarentie"
+            },
+            {
+              "coord": {
+                "x": 2561135,
+                "y": 6699812
+              },
+              "arrTime": "201204061920",
+              "depTime": "201204061920",
+              "name": "Kerava\/VR",
+              "code": "9040502",
+              "shortCode": "Ke0402",
+              "stopAddress": "Keravan asema"
+            }
+          ]
+        },
+        {
+          "length": 25645,
+          "duration": 960,
+          "type": "12",
+          "code": "3001R 2",
+          "locs": [
+            {
+              "coord": {
+                "x": 2561135,
+                "y": 6699812
+              },
+              "arrTime": "201204061920",
+              "depTime": "201204061920",
+              "name": "Kerava\/VR",
+              "code": "9040502",
+              "shortCode": "Ke0402",
+              "stopAddress": "Keravan asema"
+            },
+            {
+              "coord": {
+                "x": 2557908,
+                "y": 6687213
+              },
+              "arrTime": "201204061928",
+              "depTime": "201204061928",
+              "name": "Tikkurila\/VR",
+              "code": "4610551",
+              "shortCode": "V6151",
+              "stopAddress": "Asematie 1"
+            },
+            {
+              "coord": {
+                "x": 2551969,
+                "y": 6676765
+              },
+              "arrTime": "201204061936",
+              "depTime": "201204061936",
+              "name": "Pasila\/VR",
+              "code": "1174551",
+              "shortCode": "0071",
+              "stopAddress": "Ratapihantie 6"
+            }
+          ]
+        },
+        {
+          "length": 83,
+          "duration": 71.16,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2551969,
+                "y": 6676765
+              },
+              "arrTime": "201204061936",
+              "depTime": "201204061936",
+              "name": "Pasila\/VR",
+              "code": "1174551",
+              "shortCode": "0071",
+              "stopAddress": "Ratapihantie 6"
+            },
+            {
+              "coord": {
+                "x": 2551976.5,
+                "y": 6676759.8
+              },
+              "arrTime": "201204061936",
+              "depTime": "201204061936",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2551919.4,
+                "y": 6676745.6
+              },
+              "arrTime": "201204061937",
+              "depTime": "201204061937",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2551921,
+                "y": 6676754
+              },
+              "arrTime": "201204061937",
+              "depTime": "201204061942",
+              "name": "Pasila\/VR",
+              "code": "1174502",
+              "shortCode": "0071",
+              "stopAddress": "Pasilan asema"
+            }
+          ]
+        },
+        {
+          "length": 31873,
+          "duration": 2040,
+          "type": "12",
+          "code": "3002U 1",
+          "locs": [
+            {
+              "coord": {
+                "x": 2551921,
+                "y": 6676754
+              },
+              "arrTime": "201204061937",
+              "depTime": "201204061942",
+              "name": "Pasila\/VR",
+              "code": "1174502",
+              "shortCode": "0071",
+              "stopAddress": "Pasilan asema"
+            },
+            {
+              "coord": {
+                "x": 2549700,
+                "y": 6678878
+              },
+              "arrTime": "201204061945",
+              "depTime": "201204061945",
+              "name": "Huopalahti\/VR",
+              "code": "1291501",
+              "shortCode": "0079",
+              "stopAddress": "Kyl\u00e4tie 25"
+            },
+            {
+              "coord": {
+                "x": 2545255,
+                "y": 6678951
+              },
+              "arrTime": "201204061949",
+              "depTime": "201204061949",
+              "name": "Lepp\u00e4vaara\/VR",
+              "code": "2111502",
+              "shortCode": "E1057",
+              "stopAddress": "Lepp\u00e4polku"
+            },
+            {
+              "coord": {
+                "x": 2543597,
+                "y": 6678753
+              },
+              "arrTime": "201204061951",
+              "depTime": "201204061951",
+              "name": "Kilo\/VR",
+              "code": "2131501",
+              "shortCode": "E1330",
+              "stopAddress": "Lansanpurontie"
+            },
+            {
+              "coord": {
+                "x": 2541953,
+                "y": 6678521
+              },
+              "arrTime": "201204061953",
+              "depTime": "201204061953",
+              "name": "Kera\/VR",
+              "code": "2132502",
+              "shortCode": "E1832",
+              "stopAddress": "Nihtim\u00e4entie"
+            },
+            {
+              "coord": {
+                "x": 2540789,
+                "y": 6678058
+              },
+              "arrTime": "201204061956",
+              "depTime": "201204061956",
+              "name": "Kauniainen\/VR",
+              "code": "3010501",
+              "shortCode": "Ka0101",
+              "stopAddress": "Gresantie 17"
+            },
+            {
+              "coord": {
+                "x": 2539159,
+                "y": 6677472
+              },
+              "arrTime": "201204061958",
+              "depTime": "201204061958",
+              "name": "Koivuhovi\/VR",
+              "code": "2161501",
+              "shortCode": "E1606",
+              "stopAddress": "Koivuhovintie"
+            },
+            {
+              "coord": {
+                "x": 2538082,
+                "y": 6677378
+              },
+              "arrTime": "201204062000",
+              "depTime": "201204062000",
+              "name": "Tuomarila\/VR",
+              "code": "2612501",
+              "shortCode": "E6059",
+              "stopAddress": "Tuomarilantie"
+            },
+            {
+              "coord": {
+                "x": 2536580,
+                "y": 6677244
+              },
+              "arrTime": "201204062002",
+              "depTime": "201204062002",
+              "name": "Espoo\/VR",
+              "code": "2611502",
+              "shortCode": "E6038",
+              "stopAddress": "Espoonsilta"
+            },
+            {
+              "coord": {
+                "x": 2533459,
+                "y": 6675446
+              },
+              "arrTime": "201204062005",
+              "depTime": "201204062005",
+              "name": "Kauklahti\/VR",
+              "code": "2511501",
+              "shortCode": "E5141",
+              "stopAddress": "Hansatie 3"
+            },
+            {
+              "coord": {
+                "x": 2532447,
+                "y": 6674984
+              },
+              "arrTime": "201204062006",
+              "depTime": "201204062006",
+              "name": "Mankki\/VR",
+              "code": "2521501",
+              "shortCode": "E5214",
+              "stopAddress": "Lasilaaksontie 10"
+            },
+            {
+              "coord": {
+                "x": 2530688,
+                "y": 6673511
+              },
+              "arrTime": "201204062008",
+              "depTime": "201204062008",
+              "name": "Luoma\/VR",
+              "code": "6010502",
+              "shortCode": "Ki0102"
+            },
+            {
+              "coord": {
+                "x": 2530086,
+                "y": 6672003
+              },
+              "arrTime": "201204062011",
+              "depTime": "201204062011",
+              "name": "Masala\/VR",
+              "code": "6010503",
+              "shortCode": "Ki0103"
+            },
+            {
+              "coord": {
+                "x": 2528650,
+                "y": 6669686
+              },
+              "arrTime": "201204062013",
+              "depTime": "201204062013",
+              "name": "Jorvas\/VR",
+              "code": "6010504",
+              "shortCode": "Ki0104"
+            },
+            {
+              "coord": {
+                "x": 2526351,
+                "y": 6667430
+              },
+              "arrTime": "201204062016",
+              "depTime": "201204062016",
+              "name": "Tolsa\/VR",
+              "code": "6010505",
+              "shortCode": "Ki0105"
+            }
+          ]
+        },
+        {
+          "length": 6504,
+          "duration": 5521.5,
+          "type": "walk",
+          "locs": [
+            {
+              "coord": {
+                "x": 2526351,
+                "y": 6667430
+              },
+              "arrTime": "201204062016",
+              "depTime": "201204062016",
+              "name": "Tolsa\/VR",
+              "code": "6010505",
+              "shortCode": "Ki0105"
+            },
+            {
+              "coord": {
+                "x": 2526285.1,
+                "y": 6667392.9
+              },
+              "arrTime": "201204062017",
+              "depTime": "201204062017",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2526457.8,
+                "y": 6667262.3
+              },
+              "arrTime": "201204062021",
+              "depTime": "201204062021",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526444.4,
+                "y": 6667239.1
+              },
+              "arrTime": "201204062021",
+              "depTime": "201204062021",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526479.6,
+                "y": 6666693.6
+              },
+              "arrTime": "201204062030",
+              "depTime": "201204062030",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526686.9,
+                "y": 6666257.7
+              },
+              "arrTime": "201204062037",
+              "depTime": "201204062037",
+              "name": "Vanha Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526843.1,
+                "y": 6666143.7
+              },
+              "arrTime": "201204062040",
+              "depTime": "201204062040",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526835.7,
+                "y": 6666119.8
+              },
+              "arrTime": "201204062040",
+              "depTime": "201204062040",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2526918.7,
+                "y": 6665956.5
+              },
+              "arrTime": "201204062043",
+              "depTime": "201204062043",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527203,
+                "y": 6665859.9
+              },
+              "arrTime": "201204062048",
+              "depTime": "201204062048",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527684.9,
+                "y": 6665418.8
+              },
+              "arrTime": "201204062059",
+              "depTime": "201204062059",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527934.3,
+                "y": 6665211
+              },
+              "arrTime": "201204062103",
+              "depTime": "201204062103",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527801.7,
+                "y": 6663440.8
+              },
+              "arrTime": "201204062131",
+              "depTime": "201204062131",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527895.8,
+                "y": 6663286.7
+              },
+              "arrTime": "201204062134",
+              "depTime": "201204062134",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2528069.6,
+                "y": 6662737
+              },
+              "arrTime": "201204062143",
+              "depTime": "201204062143",
+              "name": "Porkkalantie"
+            },
+            {
+              "coord": {
+                "x": 2527905.8,
+                "y": 6662580.5
+              },
+              "arrTime": "201204062146",
+              "depTime": "201204062146",
+              "name": null
+            },
+            {
+              "coord": {
+                "x": 2527815,
+                "y": 6662705
+              },
+              "arrTime": "201204062148",
+              "depTime": "201204062148",
+              "name": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+]
