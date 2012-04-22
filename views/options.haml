@@ -1,10 +1,11 @@
 %header(data-role = "header" data-position="inline")
 	%a(href = "#home" data-icon="delete" data-rel="back") Cancel
 	%h1 Options
-	%a(href = "#home" data-icon="check" data-theme="b" id="saveOpt" data-rel="back") Save
+	%a(href = "#" data-icon="check" data-theme="b" id="saveOpt") Save
 	
 %section(data-role="content")
 	%form
 		%h3 Addresses
 		%input(type = "text" name="home" id="optHome" placeholder="Home Address")
 		%input(type = "text" name="work" id="optWork" placeholder = "Work Address")
+		%input(type = "text" name="city" id="optCity" placeholder = "City Address")

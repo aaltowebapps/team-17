@@ -17,3 +17,12 @@
       {{/legs}}
     {{/with}}
     {{/each}}
+
+-# Selection list for multiple address matches
+%script{:id => 'addressList', :type => 'text/x-handlebars-template'}
+  %p There were multiple matches for your address, please select one:
+  %div{:data => {:role => 'controlgroup'}}
+    {{#each []}}
+    %a{:data => {:role => 'button'}} 
+      {{name}} - {{coords}}
+    {{/each}}
