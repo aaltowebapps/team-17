@@ -1,22 +1,19 @@
 -# The structure of a route listing can be seen in public/sampleroute.json
-%script{:id => "routes", :type => "text/x-handlebars-template"}
-  .routeList{:data => {:role => "collapsible-set", :theme => "c", :'content-theme' => 'd'}}
+%script{:id => 'routes', :type => 'text/x-handlebars-template'}
+  .routeList{:data => {:role => 'collapsible-set', :theme => 'c', :'content-theme' => 'd'}}
     -# Go through the array of routes and select the single item in each
     {{#each []}}
     {{#with [0]}}
-    .route{:data => {:role => "collapsible", :collapsed => "true"}}
-      %p
-        {{length}}
+    .route{:data => {:role => 'collapsible', :collapsed => 'true'}}
       %h3
-        {{durationHMS}}
-      %ul
+        {{length}} - {{duration}}
       -# List each part of the route
-        {{#legs}}
-        %li
-          %h4
-            {{type}}
-          %p.ul-li-aside
-            {{length}}
-        {{/legs}}
+      {{#legs}}
+      .leg
+        %h6
+          {{length}}
+        %p
+          {{duration}}
+      {{/legs}}
     {{/with}}
     {{/each}}
