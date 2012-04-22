@@ -14,6 +14,9 @@ class ReittiSuperDial < Sinatra::Base
 
 	get '/reittiopas' do
 
+		# Set content type to json
+		content_type 'application/json'
+
 		# Adds the user and key to the parameters, otherwise keeps all params.
 		params.update( { :user => settings.api_user, :pass => settings.api_pass } )
 
