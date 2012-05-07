@@ -26,6 +26,38 @@ function handlebarsInit() {
     var t = leg.locs[0].depTime.toString();
     return t.substr(8,2) + ":" + t.substr(10,2);
   });
+  
+  // departure time of a leg
+  Handlebars.registerHelper('arrivalTime', function() {
+    var leg = this.legs[this.legs.length-1];
+    var t = leg.locs[leg.locs.length-1].arrTime.toString();
+    return t.substr(8,2) + ":" + t.substr(10,2);
+  });
+  // departure time of a leg
+  Handlebars.registerHelper('firstLineTime', function(leg) {
+    var t = leg.locs[0].depTime.toString();
+    return t.substr(8,2) + ":" + t.substr(10,2);
+  });
+  
+  // End arrival time
+  Handlebars.registerHelper('endLineTime', function(leg) {
+    var t = leg.locs[leg.locs.length-1].arrTime.toString();
+    return t.substr(8,2) + ":" + t.substr(10,2);
+  });
+    // Total walking time
+  Handlebars.registerHelper('totalWalkingTime', function() {
+  	var l = 0;
+  	for (i=0;i<this.legs.length;i++)
+  	{
+  	    if(this.legs[i].type == 'walk')
+  		{
+  		    console.log("walk")
+  		    l = l + this.legs[i].duration;
+  		}
+  	}
+    return l.toString();
+  });
+  
 }
 
 /*

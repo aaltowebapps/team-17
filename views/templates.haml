@@ -6,7 +6,21 @@
     {{#with [0]}}
     .route{:data => {:role => 'collapsible', :collapsed => 'true'}}
       %h3
-        Distance: {{length}}, Departure: {{departureTime legs.[0]}}, First line: {{departureTime legs.[1]}}, Duration: {{duration}}
+        %table
+          %tr
+            %td
+              {{departureTime legs.[0]}}
+            %td
+              {{duration}}
+            %td
+              {{arrivalTime}}
+          %tr
+            %td
+              {{firstLineTime legs.[0]}}
+            %td
+              {{totalWalkingTime}}
+            %td
+              {{endLineTime legs.[0]}}
       -# List each part of the route
       {{#legs}}
       .leg
