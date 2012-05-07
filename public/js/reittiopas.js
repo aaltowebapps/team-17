@@ -6,19 +6,25 @@ function handlebarsInit() {
     Templates[this.id] = Handlebars.compile($(this).html());
   });
 
+  // seconds to hours and minutes
   Handlebars.registerHelper('duration', function() {
-    // seconds to hours and minutes
-    d = Number(this.duration);
+    var d = Number(this.duration);
     var h = Math.floor(d / 3600);
     var m = Math.round(d % 3600 / 60);
     return (h > 0 ? h + " h " : "") + m + " min";
   });
 
+  // returns meters if less than 1 km, otherwise km with one decimal
   Handlebars.registerHelper('length', function() {
-    // returns meters if less than 1 km, otherwise km with one decimal
-    m = Number(this.length);
-    km = parseFloat( (m / 1000).toFixed(1) );
+    var m = Number(this.length);
+    var km = parseFloat( (m / 1000).toFixed(1) );
     return (m < 1000 ? m + " m" : km + " km");
+  });
+
+  // departure time of a leg
+  Handlebars.registerHelper('departureTime', function(leg) {
+    var t = leg.locs[0].depTime.toString();
+    return t.substr(8,2) + ":" + t.substr(10,2);
   });
 }
 
