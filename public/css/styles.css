@@ -1,3 +1,19 @@
+.route table {
+	width: 100%;
+}
+
+.route td:first-child {
+	text-align: left;
+}
+
+.route td:first-child + td {
+	text-align: center;
+}
+
+.route td:first-child + td + td {
+	text-align: right;
+}
+
 .leg {
 	display: inline-block;
 }
