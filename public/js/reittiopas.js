@@ -57,7 +57,25 @@ function handlebarsInit() {
   	}
     return l.toString();
   });
-  
+
+    // Icon for specific line
+  Handlebars.registerHelper('iconClass', function() {
+    switch(this.type) {
+      case "walk":
+        return "walk";
+      case 2:
+        return "tram";
+      case 6:
+        return "metro";
+      case 7:
+        return "ferry";
+      case 12:
+      case 13:
+        return "train";
+      default:
+        return "bus";
+    }
+  });
 }
 
 /*

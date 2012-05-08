@@ -1,3 +1,33 @@
 .leg {
 	display: inline-block;
 }
+
+.icon {
+	width: 24px;
+	height: 24px;
+}
+
+.icon.walk {
+	background-color: black;
+	background-image: url("../img/walk.png");
+}
+
+.icon.tram {
+	background-color: green;
+	background-image: url("../img/tram.png");
+}
+
+.icon.metro {
+	background-color: orange;
+	background-image: url("../img/metro.png");
+}
+
+.icon.ferry {
+	background-color: teal;
+	background-image: url("../img/ferry.png");
+}
+
+.icon.bus {
+	background-color: blue;
+	background-image: url("../img/bus.png");
+}
