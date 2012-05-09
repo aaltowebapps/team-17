@@ -1,5 +1,17 @@
 var Templates = {};
 
+// returns meters if less than 1 km, otherwise km with one decimal
+function formatDistance(m) {
+  var km = parseFloat( (m / 1000).toFixed(1) );
+  return (m < 1000 ? m + " m" : km + " km");
+}
+
+// from format YYYYMMDDHHMM to HH:MM
+function formatTime(time) {
+  var timeString = time.toString();
+  return timeString.substr(8,2) + ":" + timeString.substr(10,2);
+}
+
 /* Compile Handlebars templates and register helpers */
 function handlebarsInit() {
   $('script[type="text/x-handlebars-template"]').each(function () {
@@ -14,48 +26,40 @@ function handlebarsInit() {
     return (h > 0 ? h + " h " : "") + m + " min";
   });
 
-  // returns meters if less than 1 km, otherwise km with one decimal
   Handlebars.registerHelper('length', function() {
-    var m = Number(this.length);
-    var km = parseFloat( (m / 1000).toFixed(1) );
-    return (m < 1000 ? m + " m" : km + " km");
+      return formatDistance(this.length);
   });
 
   // departure time of a leg
   Handlebars.registerHelper('departureTime', function(leg) {
-    var t = leg.locs[0].depTime.toString();
-    return t.substr(8,2) + ":" + t.substr(10,2);
+    return formatTime(leg.locs[0].depTime);
   });
   
   // departure time of a leg
   Handlebars.registerHelper('arrivalTime', function() {
     var leg = this.legs[this.legs.length-1];
-    var t = leg.locs[leg.locs.length-1].arrTime.toString();
-    return t.substr(8,2) + ":" + t.substr(10,2);
+    return formatTime(leg.locs[leg.locs.length-1].arrTime);
   });
   // departure time of a leg
   Handlebars.registerHelper('firstLineTime', function(leg) {
-    var t = leg.locs[0].depTime.toString();
-    return t.substr(8,2) + ":" + t.substr(10,2);
+    return formatTime(leg.locs[0].depTime);
   });
   
   // End arrival time
   Handlebars.registerHelper('endLineTime', function(leg) {
-    var t = leg.locs[leg.locs.length-1].arrTime.toString();
-    return t.substr(8,2) + ":" + t.substr(10,2);
+    return formatTime(leg.locs[leg.locs.length-1].arrTime);
   });
     // Total walking time
-  Handlebars.registerHelper('totalWalkingTime', function() {
+  Handlebars.registerHelper('totalWalkingDistance', function() {
   	var l = 0;
   	for (i=0;i<this.legs.length;i++)
   	{
-  	    if(this.legs[i].type == 'walk')
+      if(this.legs[i].type == 'walk')
   		{
-  		    console.log("walk")
-  		    l = l + this.legs[i].duration;
+  		    l += this.legs[i].length;
   		}
   	}
-    return l.toString();
+    return formatDistance(l);
   });
 
     // Icon for specific line
