@@ -2,25 +2,35 @@
 	width: 100%;
 }
 
-.route td:first-child {
+.route td:first-child { /* column 1 */
 	text-align: left;
 }
 
-.route td:first-child + td {
+.route td:first-child + td { /* column 2 */
 	text-align: center;
 }
 
-.route td:first-child + td + td {
+.route td:first-child + td + td { /* column 3 */
 	text-align: right;
 }
 
+.route tr:first-child { /* row 1 */
+
+}
+
+.route tr:first-child + tr { /* row 2 */
+	color: #AAA;
+	font-size: 80%;
+}
+
 .leg {
-	display: inline-block;
 }
 
 .icon {
+	display: inline-block;
 	width: 24px;
 	height: 24px;
+	margin: 0px 5px;
 }
 
 .icon.walk {

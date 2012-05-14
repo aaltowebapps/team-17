@@ -88,6 +88,7 @@ function handlebarsInit() {
 */
 function getRoutes(fromX, fromY, toX, toY, page) {
 
+  $.mobile.showPageLoadingMsg(); // show spinner
   $.getJSON('/reittiopas',
     { request: 'route',
       format: 'json',
@@ -95,8 +96,10 @@ function getRoutes(fromX, fromY, toX, toY, page) {
       to: toX + ',' + toY,
       show: 5
     }, function(json) {
+      // add routes to page
       var content = Templates.routes(json);
       page.html(content).trigger('create');
+      $.mobile.hidePageLoadingMsg(); // hide spinner
   });
 }
 
@@ -115,8 +118,8 @@ function saveOptions() {
 }
 
 function resolveAddress( address , type ){
-    var coords = null;
-    if(address) {
+  var coords = null;
+  if(address) {
     $.getJSON('/reittiopas',
       { request: 'geocode',
         format: 'json',
@@ -155,7 +158,6 @@ function resolveAddress( address , type ){
         {
             // should not reach here
         }
-                   
     });
   }
 }
@@ -167,8 +169,8 @@ function restoreOptions() {
 }
 
 
-// on document ready
-$(function() {
+// on page init
+$(document).bind('pageinit', function() {
       
   handlebarsInit();
   
@@ -178,8 +180,8 @@ $(function() {
   });
 
   // Bindings for options save
-  $("#saveOpt").bind("click", function(event) {    
-    saveOptions(); 
+  $("#saveOpt").bind("click", function(event) {
+    saveOptions();
   });
   
   // Bindings for options  cancel
