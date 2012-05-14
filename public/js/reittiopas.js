@@ -198,20 +198,28 @@ $(document).bind('pageinit', function() {
   var longtitude = localStorage.longitude;
   // Todo conversion missing
   longtitude = 2548196;
+
+
   
   // Fill the content of the Home page with the routes
-  var coords = localStorage.home_coords.split(',')
-  var home = $('#home [data-role="content"]');
-  getRoutes(longtitude,latitude,coords[0],coords[1],home);
+  if(localStorage.home_coords) {
+    var coords = localStorage.home_coords.split(',')
+    var home = $('#home [data-role="content"]');
+    getRoutes(longtitude,latitude,coords[0],coords[1],home);
+  }
   
-  // Fill the content of the Home page with the routes
-  coords = localStorage.work_coords.split(',')
-  var work = $('#work [data-role="content"]');
-  getRoutes(longtitude,latitude,coords[0],coords[1],work);
+  // Fill the content of the Work page with the routes
+  if(localStorage.work_coords) {
+    coords = localStorage.work_coords.split(',')
+    var work = $('#work [data-role="content"]');
+    getRoutes(longtitude,latitude,coords[0],coords[1],work);
+  }
   
-  // Fill the content of the Home page with the routes
-  coords = localStorage.city_coords.split(',')
-  var city = $('#city [data-role="content"]');
-  getRoutes(longtitude,latitude,coords[0],coords[1],city);
-  
+  // Fill the content of the City page with the routes
+  if(localStorage.city_coords) {
+    coords = localStorage.city_coords.split(',')
+    var city = $('#city [data-role="content"]');
+    getRoutes(longtitude,latitude,coords[0],coords[1],city);
+  }
+    
 });
