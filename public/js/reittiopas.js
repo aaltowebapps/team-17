@@ -105,24 +105,34 @@ function getRoutes(fromX, fromY, toX, toY, page) {
 
 
 function saveOptions() {
+  if( $("#optHome").val() != localStorage.home_address ) {      
+      resolveAddress( $("#optHome").val(),"Home" );
+  } 
+  if ( $("#optWork").val() != localStorage.work_address ){      
+      resolveAddress(  $("#optWork").val(),"Work" );
+  } 
+  if ( $("#optCity").val() != localStorage.city_address ){      
+      resolveAddress( $("#optCity").val(),"City" );
+  } 
+  
+}
 
-  var address = $("#optHome").val();
+function resolveAddress( address , type ){
   var coords = null;
-
   if(address) {
-    $.mobile.showPageLoadingMsg(); // show spinner
-    $.getJSON( '/reittiopas',
+    $.getJSON('/reittiopas',
       { request: 'geocode',
         format: 'json',
         key: address,
         disable_unique_stop_names: 0
       }, function(json) {
-
+                          
         if(json == null) {
-          alert('No address found that matches ' + address);
+          alert('No address found that matches ' + address);          
         } 
         else if(json.length == 1) {
-          coords = json[0].coords;
+          coords = json[0].coords;     
+          address = json[0].name;
           alert('Coords: ' + coords);
         } 
         else {
@@ -132,21 +142,51 @@ function saveOptions() {
             headerText: 'Select Address',
             headerClose: true,
             blankContent : addressList })
+            coords = json[1].coords;     
+            address = json[1].name; 
+        }   
+        if( type == "Home" ){
+            localStorage.home_coords = coords;
+            localStorage.home_address = address;    
+        } if( type == "Work" ){
+            localStorage.work_coords = coords;
+            localStorage.work_address = address;    
+        }if( type == "City" ){
+            localStorage.city_coords = coords;
+            localStorage.city_address = address;    
+        }else
+        {
+            // should not reach here
         }
-       $.mobile.hidePageLoadingMsg(); // hide spinner
     });
   }
 }
 
-// on document ready
-$(function() {
+function restoreOptions() {
+  $("#optHome").val(localStorage.home_address);
+  $("#optWork").val(localStorage.work_address);
+  $("#optCity").val(localStorage.city_address);  
+}
 
+
+// on page init
+$(document).bind('pageinit', function() {
+      
   handlebarsInit();
-
+  
   // Bindings for options
-  $("#saveOpt").bind("click", function(event) { 
-    event.preventDefault();
-    saveOptions(); 
+  $("#optButton").bind("click", function(event) {    
+    restoreOptions(); 
+  });
+
+  // Bindings for options save
+  $("#saveOpt").bind("click", function(event) {
+    saveOptions();
+  });
+  
+  // Bindings for options  cancel
+  $("#cancelOpt").bind("click", function(event) {    
+    restoreOptions(); 
   });
 
   // Fill the content of the Home page with the routes
