@@ -88,6 +88,7 @@ function handlebarsInit() {
 */
 function getRoutes(fromX, fromY, toX, toY, page) {
 
+  $.mobile.showPageLoadingMsg(); // show spinner
   $.getJSON('/reittiopas',
     { request: 'route',
       format: 'json',
@@ -95,8 +96,10 @@ function getRoutes(fromX, fromY, toX, toY, page) {
       to: toX + ',' + toY,
       show: 5
     }, function(json) {
+      // add routes to page
       var content = Templates.routes(json);
       page.html(content).trigger('create');
+      $.mobile.hidePageLoadingMsg(); // hide spinner
   });
 }
 
@@ -107,7 +110,8 @@ function saveOptions() {
   var coords = null;
 
   if(address) {
-    $.getJSON('/reittiopas',
+    $.mobile.showPageLoadingMsg(); // show spinner
+    $.getJSON( '/reittiopas',
       { request: 'geocode',
         format: 'json',
         key: address,
@@ -129,6 +133,7 @@ function saveOptions() {
             headerClose: true,
             blankContent : addressList })
         }
+       $.mobile.hidePageLoadingMsg(); // hide spinner
     });
   }
 }
