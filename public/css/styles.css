@@ -24,12 +24,13 @@
 }
 
 .leg {
-	display: inline-block;
 }
 
 .icon {
+	display: inline-block;
 	width: 24px;
 	height: 24px;
+	margin: 0px 5px;
 }
 
 .icon.walk {

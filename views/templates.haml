@@ -21,14 +21,18 @@
               {{totalWalkingDistance}}
             %td
               {{endLineTime legs.[0]}}
+          %tr
+            %td
+            %td
+              {{#legs}}
+              %figure{:class => 'icon {{iconClass}}'}
+              {{/legs}}
+            %td
       -# List each part of the route
       {{#legs}}
       .leg
-        %h6
-          %figure{:class => 'icon {{iconClass}}'}
-          {{length}}
-        %p
-          {{duration}}
+        %figure{:class => 'icon {{iconClass}}'}
+        {{length}} - {{duration}}
       {{/legs}}
     {{/with}}
     {{/each}}
