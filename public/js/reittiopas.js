@@ -187,8 +187,29 @@ $(function() {
     restoreOptions(); 
   });
 
+
+  // get gps location
+  geoLocation();
+  var latitude = localStorage.latitude;
+  // Todo conversion missing  
+  latitude = 6678528;  
+  var longtitude = localStorage.longitude;
+  // Todo conversion missing
+  longtitude = 2548196;
+  
   // Fill the content of the Home page with the routes
+  var coords = localStorage.home_coords.split(',')
   var home = $('#home [data-role="content"]');
-  getRoutes(2561133,6699755,2527815,6662705,home);
+  getRoutes(longtitude,latitude,coords[0],coords[1],home);
+  
+  // Fill the content of the Home page with the routes
+  coords = localStorage.work_coords.split(',')
+  var work = $('#work [data-role="content"]');
+  getRoutes(longtitude,latitude,coords[0],coords[1],work);
+  
+  // Fill the content of the Home page with the routes
+  coords = localStorage.city_coords.split(',')
+  var city = $('#city [data-role="content"]');
+  getRoutes(longtitude,latitude,coords[0],coords[1],city);
   
 });
