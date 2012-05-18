@@ -172,6 +172,34 @@ function restoreOptions() {
   $("#optCity").val(localStorage.city_address);  
 }
 
+function refreshRoutes() {
+    // get gps location
+  getCurrentLocation( function(currentCoords) {
+  
+    // Fill the content of the Home page with the routes
+    if(localStorage.home_coords) {
+      var destination = localStorage.home_coords.split(',')
+      var home = $('#home [data-role="content"]');
+      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], home);
+    }
+    
+    // Fill the content of the Work page with the routes
+    if(localStorage.work_coords) {
+      var destination = localStorage.work_coords.split(',')
+      var work = $('#work [data-role="content"]');
+      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], work);
+    }
+    
+    // Fill the content of the City page with the routes
+    if(localStorage.city_coords) {
+      var destination = localStorage.city_coords.split(',')
+      var city = $('#city [data-role="content"]');
+      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], city);
+    }
+
+  });
+}
+
 
 // on page init
 $(document).bind('pageinit', function() {
@@ -193,31 +221,5 @@ $(document).bind('pageinit', function() {
     restoreOptions(); 
   });
 
-
-  // get gps location
-  geoLocation();
-  var latitude = localStorage.latitude;
-  var longtitude = localStorage.longitude;
-  
-  // Fill the content of the Home page with the routes
-  if(localStorage.home_coords) {
-    var coords = localStorage.home_coords.split(',')
-    var home = $('#home [data-role="content"]');
-    getRoutes(longtitude,latitude,coords[0],coords[1],home);
-  }
-  
-  // Fill the content of the Work page with the routes
-  if(localStorage.work_coords) {
-    coords = localStorage.work_coords.split(',')
-    var work = $('#work [data-role="content"]');
-    getRoutes(longtitude,latitude,coords[0],coords[1],work);
-  }
-  
-  // Fill the content of the City page with the routes
-  if(localStorage.city_coords) {
-    coords = localStorage.city_coords.split(',')
-    var city = $('#city [data-role="content"]');
-    getRoutes(longtitude,latitude,coords[0],coords[1],city);
-  }
-    
+  refreshRoutes();    
 });

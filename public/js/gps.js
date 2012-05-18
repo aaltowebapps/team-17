@@ -1,12 +1,11 @@
-var myLatLng;
-var map;
-var marker;
-                
-function geoLocation() {
-  //Get position fast and initialized google map
-  navigator.geolocation.getCurrentPosition(function(geodata) {
-    localStorage.latitude = geodata.coords.latitude;
-    localStorage.longitude = geodata.coords.longitude;    
-  });
-};
-   
+// Gets the current coordinates and passes them to the callback function.
+function getCurrentLocation(callback) {
+   if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+         callback(position.coords);
+       });
+    }
+    else {
+       throw new Error("Your browser does not support geolocation.");
+    }
+}
