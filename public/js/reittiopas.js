@@ -40,14 +40,26 @@ function handlebarsInit() {
     var leg = this.legs[this.legs.length-1];
     return formatTime(leg.locs[leg.locs.length-1].arrTime);
   });
+
   // departure time of a leg
-  Handlebars.registerHelper('firstLineTime', function(leg) {
-    return formatTime(leg.locs[0].depTime);
+  Handlebars.registerHelper('firstLineDeparture', function() {
+    for (var i = 0; i < this.legs.length; i++) {
+      var leg = this.legs[i];
+      if(leg.type != "walk") {
+        return formatTime(leg.locs[0].depTime);
+      }
+    }
   });
   
   // End arrival time
-  Handlebars.registerHelper('endLineTime', function(leg) {
-    return formatTime(leg.locs[leg.locs.length-1].arrTime);
+  Handlebars.registerHelper('lastLineArrival', function() {
+    for (var i = this.legs.length - 1; i >= 0; i--) {
+      var leg = this.legs[i];
+      console.log(leg);
+      if(leg.type != "walk") {
+        return formatTime(leg.locs[leg.locs.length - 1].arrTime);
+      }
+    }
   });
     // Total walking time
   Handlebars.registerHelper('totalWalkingDistance', function() {
