@@ -92,6 +92,8 @@ function getRoutes(fromX, fromY, toX, toY, page) {
   $.getJSON('/reittiopas',
     { request: 'route',
       format: 'json',
+      epsg_in: 'wgs84',
+      epsg_out: 'wgs84',
       from: fromX + ',' + fromY,
       to: toX + ',' + toY,
       show: 5
@@ -123,6 +125,8 @@ function resolveAddress( address , type ){
     $.getJSON('/reittiopas',
       { request: 'geocode',
         format: 'json',
+        epsg_in: 'wgs84',
+        epsg_out: 'wgs84',
         key: address,
         disable_unique_stop_names: 0
       }, function(json) {
@@ -193,13 +197,7 @@ $(document).bind('pageinit', function() {
   // get gps location
   geoLocation();
   var latitude = localStorage.latitude;
-  // Todo conversion missing  
-  latitude = 6678528;  
   var longtitude = localStorage.longitude;
-  // Todo conversion missing
-  longtitude = 2548196;
-
-
   
   // Fill the content of the Home page with the routes
   if(localStorage.home_coords) {
