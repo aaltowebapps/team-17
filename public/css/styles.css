@@ -28,32 +28,29 @@
 
 .icon {
 	display: inline-block;
-	width: 24px;
-	height: 24px;
+	width: 23px;
+	height: 25px;
 	margin: 0px 5px;
 }
 
 .icon.walk {
 	background-color: black;
-	background-image: url("../img/walk.png");
+	background-image: url("../img/25px/walk.png");
 }
 
 .icon.tram {
-	background-color: green;
-	background-image: url("../img/tram.png");
+	background-image: url("../img/25px/tram.png");
 }
 
 .icon.metro {
-	background-color: orange;
-	background-image: url("../img/metro.png");
+	background-image: url("../img/25px/metro.png");
 }
 
 .icon.ferry {
 	background-color: teal;
-	background-image: url("../img/ferry.png");
+	background-image: url("../img/25px/ferry.png");
 }
 
 .icon.bus {
-	background-color: blue;
-	background-image: url("../img/bus.png");
+	background-image: url("../img/25px/bus.png");
 }
