@@ -1,3 +1,16 @@
+.address {
+	text-align: center;
+	margin-top: 5px;
+}
+
+.address h4 {
+	margin: 0 auto;
+}
+
+section[data-role=content] {
+	padding-top: 0;
+}
+
 .route table {
 	width: 100%;
 }

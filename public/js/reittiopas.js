@@ -1,5 +1,9 @@
 var Templates = {};
 
+var HOME = 'home';
+var WORK = 'work';
+var CITY = 'city';
+
 // returns meters if less than 1 km, otherwise km with one decimal
 function formatDistance(m) {
   var km = parseFloat( (m / 1000).toFixed(1) );
@@ -16,6 +20,17 @@ function formatTime(time) {
 function handlebarsInit() {
   $('script[type="text/x-handlebars-template"]').each(function () {
     Templates[this.id] = Handlebars.compile($(this).html());
+  });
+
+  Handlebars.registerHelper('destination', function(type) {
+      switch(type) {
+        case HOME:
+          return localStorage.home_address;
+        case WORK:
+          return localStorage.work_address;
+        case CITY:
+          return localStorage.city_address;
+      }
   });
 
   // seconds to hours and minutes
@@ -55,7 +70,6 @@ function handlebarsInit() {
   Handlebars.registerHelper('lastLineArrival', function() {
     for (var i = this.legs.length - 1; i >= 0; i--) {
       var leg = this.legs[i];
-      console.log(leg);
       if(leg.type != "walk") {
         return formatTime(leg.locs[leg.locs.length - 1].arrTime);
       }
@@ -114,6 +128,25 @@ function getRoutes(fromX, fromY, toX, toY, page) {
       var content = Templates.routes(json);
       page.html(content).trigger('create');
       $.mobile.hidePageLoadingMsg(); // hide spinner
+  });
+}
+
+// Get the name of your current position
+function getPositionAddress(type) {
+  getCurrentLocation( function (coords) {
+    $.getJSON('/reittiopas',
+      { request: 'reverse_geocode',
+        format: 'json',
+        epsg_in: 'wgs84',
+        epsg_out: 'wgs84',
+        coordinate: coords.longitude + ',' + coords.latitude,
+      }, function (json) {
+        json.type = type;
+        // add routes to page
+        var address = $('#' + type + ' .address');
+        var content = Templates.fromToHeader(json);
+        address.html(content).trigger('create');
+    });
   });
 }
 
@@ -192,6 +225,7 @@ function refreshRoutes() {
     if(localStorage.home_coords) {
       var destination = localStorage.home_coords.split(',')
       var home = $('#home [data-role="content"]');
+      getPositionAddress(HOME);
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], home);
     }
     
@@ -199,6 +233,7 @@ function refreshRoutes() {
     if(localStorage.work_coords) {
       var destination = localStorage.work_coords.split(',')
       var work = $('#work [data-role="content"]');
+      getPositionAddress(WORK);
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], work);
     }
     
@@ -206,6 +241,7 @@ function refreshRoutes() {
     if(localStorage.city_coords) {
       var destination = localStorage.city_coords.split(',')
       var city = $('#city [data-role="content"]');
+      getPositionAddress(CITY);
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], city);
     }
 

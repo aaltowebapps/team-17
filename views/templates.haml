@@ -37,6 +37,10 @@
     {{/with}}
     {{/each}}
 
+-# Header containing the names of departure and destination
+%script{:id => 'fromToHeader', :type => 'text/x-handlebars-template'}
+  %h4 {{[0].name}} - {{destination type}}
+
 -# Selection list for multiple address matches
 %script{:id => 'addressList', :type => 'text/x-handlebars-template'}
   %p There were multiple matches for your address, please select one:
