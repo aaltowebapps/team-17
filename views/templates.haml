@@ -26,13 +26,15 @@
             %td
               {{#legs}}
               %figure{:class => 'icon {{iconClass}}'}
+                %figcaption {{lineNumber}}
               {{/legs}}
             %td
       -# List each part of the route
       {{#legs}}
       .leg
         %figure{:class => 'icon {{iconClass}}'}
-        {{length}} - {{duration}}
+          %figcaption {{lineNumber}}
+        %h5 {{departureTime this}} - {{length}} - {{duration}}
       {{/legs}}
     {{/with}}
     {{/each}}

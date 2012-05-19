@@ -46,7 +46,7 @@ function handlebarsInit() {
   });
 
   // departure time of a leg
-  Handlebars.registerHelper('departureTime', function(leg) {
+  Handlebars.registerHelper('departureTime', function (leg) {
     return formatTime(leg.locs[0].depTime);
   });
   
@@ -91,19 +91,36 @@ function handlebarsInit() {
     // Icon for specific line
   Handlebars.registerHelper('iconClass', function() {
     switch(this.type) {
-      case "walk":
-        return "walk";
-      case 2:
-        return "tram";
-      case 6:
-        return "metro";
-      case 7:
-        return "ferry";
-      case 12:
-      case 13:
-        return "train";
+      case 'walk':
+        return 'walk';
+      case '2':
+        return 'tram';
+      case '6':
+        return 'metro';
+      case '7':
+        return 'ferry';
+      case '12':
+      case '13':
+        return 'train';
       default:
-        return "bus";
+        return 'bus';
+    }
+  });
+
+  Handlebars.registerHelper('lineNumber', function() {
+    switch(this.type) { // special cases
+      case 'walk':
+      case '7': // ferry
+        return '';
+      case '6': //metro
+        return 'M';
+      case '12': // train letter
+        return this.code.substr(4,1);
+      default:
+        var code = this.code.substr(1,5);
+        //TODO remove spaces, zeroes and redundant last number
+        console.log(this.type + ' ' + code);
+        return code;
     }
   });
 }
@@ -112,7 +129,7 @@ function handlebarsInit() {
   This function should call the Reittiopas API (through our own proxy),
   then insert the fetched JSON into the page through a Handlebars.js template.
 */
-function getRoutes(fromX, fromY, toX, toY, page) {
+function getRoutes(fromLong, fromLat, toLong, toLat, page) {
 
   $.mobile.showPageLoadingMsg(); // show spinner
   $.getJSON('/reittiopas',
@@ -120,10 +137,10 @@ function getRoutes(fromX, fromY, toX, toY, page) {
       format: 'json',
       epsg_in: 'wgs84',
       epsg_out: 'wgs84',
-      from: fromX + ',' + fromY,
-      to: toX + ',' + toY,
+      from: fromLong + ',' + fromLat,
+      to: toLong + ',' + toLat,
       show: 5
-    }, function(json) {
+    }, function (json) {
       // add routes to page
       var content = Templates.routes(json);
       page.html(content).trigger('create');
@@ -214,7 +231,7 @@ function resolveAddress( address , type ){
 function restoreOptions() {
   $("#optHome").val(localStorage.home_address);
   $("#optWork").val(localStorage.work_address);
-  $("#optCity").val(localStorage.city_address);  
+  $("#optCity").val(localStorage.city_address); 
 }
 
 function refreshRoutes() {
@@ -255,17 +272,17 @@ $(document).bind('pageinit', function() {
   handlebarsInit();
   
   // Bindings for options
-  $("#optButton").bind("click", function(event) {    
+  $("#optButton").bind("click", function (event) {    
     restoreOptions(); 
   });
 
   // Bindings for options save
-  $("#saveOpt").bind("click", function(event) {
+  $("#saveOpt").bind("click", function (event) {
     saveOptions();
   });
   
   // Bindings for options  cancel
-  $("#cancelOpt").bind("click", function(event) {    
+  $("#cancelOpt").bind("click", function (event) {    
     restoreOptions(); 
   });
 
