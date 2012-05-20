@@ -22,13 +22,11 @@
             %td
               {{lastLineArrival}}
           %tr
-            %td
-            %td
+            %td.legs{:colspan => 3}
               {{#legs}}
               %figure{:class => 'icon {{iconClass}}'}
                 %figcaption {{lineNumber}}
               {{/legs}}
-            %td
       -# List each part of the route
       {{#legs}}
       %h4.leg

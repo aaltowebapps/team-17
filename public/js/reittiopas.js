@@ -237,6 +237,8 @@ function restoreOptions() {
 function refreshRoutes() {
     // get gps location
   getCurrentLocation( function(currentCoords) {
+
+    getPositionAddress(currentCoords);
   
     // Fill the content of the Home page with the routes
     if(localStorage.home_coords) {
@@ -258,9 +260,6 @@ function refreshRoutes() {
       var city = $('#city [data-role="content"]');
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], city);
     }
-
-    getPositionAddress(currentCoords);
-
   });
 }
 

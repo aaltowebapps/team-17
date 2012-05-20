@@ -36,6 +36,10 @@ section[data-role=content] {
 	font-size: 80%;
 }
 
+.route td.legs {
+	text-align: center;
+}
+
 .icon {
 	display: inline-block;
 	width: 23px;
