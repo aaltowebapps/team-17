@@ -1,3 +1,4 @@
 source 'http://rubygems.org'
-gem "sinatra", :require => "sinatra/base"
-gem "haml"
+gem 'sinatra', :require => 'sinatra/base'
+gem 'thin'
+gem 'haml'
