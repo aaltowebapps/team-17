@@ -12,7 +12,7 @@ section[data-role=content] {
 }
 
 .route table {
-	width: 100%;
+	width: 90%;
 }
 
 .route td:first-child { /* column 1 */
