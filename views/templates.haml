@@ -31,10 +31,10 @@
             %td
       -# List each part of the route
       {{#legs}}
-      .leg
+      %h4.leg
         %figure{:class => 'icon {{iconClass}}'}
-          %figcaption {{lineNumber}}
-        %h5 {{departureTime this}} - {{length}} - {{duration}}
+        %figcaption {{lineNumber}}
+        {{departureTime this}} - {{length}} - {{duration}}
       {{/legs}}
     {{/with}}
     {{/each}}

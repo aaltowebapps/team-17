@@ -36,19 +36,26 @@ section[data-role=content] {
 	font-size: 80%;
 }
 
-.leg {
-}
-
 .icon {
 	display: inline-block;
 	width: 23px;
-	height: 25px;
+	height: 35px;
 	margin: 0px 5px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.icon figcaption {
+	text-align: center;
+	font-size: 8px;
+	display: inline-block;
+	position: absolute;
+	bottom: 0px;
 }
 
 .icon.walk {
-	background-color: black;
-	background-image: url("../img/25px/walk.png");
+	background-image: url("../img/25px/walk2.png");
 }
 
 .icon.tram {
@@ -57,6 +64,21 @@ section[data-role=content] {
 
 .icon.metro {
 	background-image: url("../img/25px/metro.png");
+}
+
+.icon.train {
+	background-image: url("../img/25px/train.png");
+}
+
+.leg .icon {
+	width: 23px;
+	height: 25px;
+}
+
+.leg figcaption {
+	text-align: center;
+	line-height: 25px;
+	display: inline-block;
 }
 
 .icon.ferry {

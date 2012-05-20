@@ -110,16 +110,17 @@ function handlebarsInit() {
   Handlebars.registerHelper('lineNumber', function() {
     switch(this.type) { // special cases
       case 'walk':
+        return 'walk';
       case '7': // ferry
-        return '';
+        return 'ferry';
       case '6': //metro
         return 'M';
       case '12': // train letter
         return this.code.substr(4,1);
       default:
         var code = this.code.substr(1,5);
+        code = code.trim();
         //TODO remove spaces, zeroes and redundant last number
-        console.log(this.type + ' ' + code);
         return code;
     }
   });
