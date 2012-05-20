@@ -118,9 +118,7 @@ function handlebarsInit() {
       case '12': // train letter
         return this.code.substr(4,1);
       default:
-        var code = this.code.substr(1,5);
-        code = code.trim();
-        //TODO remove spaces, zeroes and redundant last number
+        var code = this.code.substr(1,5).replace(/^0+/, ''); //trim zeroes
         return code;
     }
   });
