@@ -39,13 +39,12 @@
 
 -# Header containing the names of departure and destination
 %script{:id => 'fromToHeader', :type => 'text/x-handlebars-template'}
-  %h4 {{[0].name}} - {{destination type}}
+  %h4 {{[0].name}} - {{destination place}}
 
 -# Selection list for multiple address matches
 %script{:id => 'addressList', :type => 'text/x-handlebars-template'}
-  %p There were multiple matches for your address, please select one:
-  %div{:data => {:role => 'controlgroup'}}
+  %select{:name => '{{place}}', :id => 'opt_{{place}}'}
     {{#each []}}
-    %a{:data => {:role => 'button'}} 
-      {{name}} - {{coords}}
+    %option{:value => '{{coords}}'}
+      {{name}}
     {{/each}}

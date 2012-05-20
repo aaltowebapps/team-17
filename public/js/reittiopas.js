@@ -23,8 +23,8 @@ function handlebarsInit() {
     Templates[this.id] = Handlebars.compile($(this).html());
   });
 
-  Handlebars.registerHelper('destination', function(type) {
-      switch(type) {
+  Handlebars.registerHelper('destination', function(place) {
+      switch(place) {
         case HOME:
           return localStorage.home_address;
         case WORK:
@@ -159,7 +159,7 @@ function getPositionAddress(coords) {
   }, function (json) {
     // add place names to pages
     for(var i in PLACES) {
-      json.type = PLACES[i];
+      json.place = PLACES[i];
       var address = $('#' + PLACES[i] + ' .address');
       var content = Templates.fromToHeader(json);
       address.html(content).trigger('create');
@@ -169,69 +169,88 @@ function getPositionAddress(coords) {
 
 
 function saveOptions() {
-  if( $("#optHome").val() != localStorage.home_address ) {      
-      resolveAddress( $("#optHome").val(),"Home" );
-  } 
-  if ( $("#optWork").val() != localStorage.work_address ){      
-      resolveAddress(  $("#optWork").val(),"Work" );
-  } 
-  if ( $("#optCity").val() != localStorage.city_address ){      
-      resolveAddress( $("#optCity").val(),"City" );
-  } 
-  
+
+  for (var i in PLACES) {
+    var place = PLACES[i];
+    var address;
+    var coords;
+    if($('#opt_' + place).is('select')) { // list selection
+
+      address = $('#opt_' + place + ' option:selected').text().trim();
+      coords = $('#opt_' + place).val();
+      storeAddress(coords, address, place);
+      $('#opt_form > *').has('#opt_' + place).replaceWith($('<input>').attr({type: 'text', id: 'opt_' + place, name: place}));
+      $('#opt_' + place).textinput().val(address);
+
+    } else { // text input
+
+      address = $('#opt_' + place).val();
+      if( address != localStorage[place + '_address'] ) {
+        resolveAddress( address, place, function ( coords, address, choicesLeft ) {
+          storeAddress(coords, address, place);
+        });
+      }
+
+    }
+    
+  }
+
+  //$.mobile.changePage('#home'); //DEBUG
 }
 
-function resolveAddress( address , type ){
+function storeAddress(coords, address, place) {
+  // store in local storage
+  localStorage[place + '_coords'] = coords;
+  localStorage[place + '_address'] = address;
+}
+
+function resolveAddress( address , place , callback ){
   var coords = null;
+  var choicesLeft;
   if(address) {
     $.getJSON('/reittiopas',
-      { request: 'geocode',
-        format: 'json',
-        epsg_in: 'wgs84',
-        epsg_out: 'wgs84',
-        key: address,
-        disable_unique_stop_names: 0
-      }, function(json) {
+    { request: 'geocode',
+      format: 'json',
+      epsg_in: 'wgs84',
+      epsg_out: 'wgs84',
+      key: address,
+      disable_unique_stop_names: 0
+    }, function(json) {
                           
-        if(json == null) {
-          alert('No address found that matches ' + address);          
-        } 
-        else if(json.length == 1) {
-          coords = json[0].coords;     
-          address = json[0].name;
-          alert('Coords: ' + coords);
-        } 
-        else {
-          var addressList = Templates.addressList(json);
-          $('#options').simpledialog2({
-            mode: 'blank',
-            headerText: 'Select Address',
-            headerClose: true,
-            blankContent : addressList })
-            coords = json[1].coords;     
-            address = json[1].name; 
-        }   
-        if( type == "Home" ){
-            localStorage.home_coords = coords;
-            localStorage.home_address = address;    
-        } if( type == "Work" ){
-            localStorage.work_coords = coords;
-            localStorage.work_address = address;    
-        }if( type == "City" ){
-            localStorage.city_coords = coords;
-            localStorage.city_address = address;    
-        }else
-        {
-            // should not reach here
-        }
+      if(json == null) {
+        alert('No address found that matches ' + address);
+        choicesLeft = true;
+      } 
+      else if(json.length == 1) {
+        coords = json[0].coords;     
+        address = json[0].name;
+        choicesLeft = false;
+        $('#opt_' + place).val(address);
+      } 
+      else {
+        json.place = place;
+        var addressList = Templates.addressList(json);
+        console.log('double? ' + place); //DEBUG
+        $('#opt_' + place).replaceWith(addressList);
+        $('#opt_' + place).selectmenu();
+
+        // placeholder from first option to keep stuff working
+        coords = json[0].coords;
+        address = json[0].name;
+        choicesLeft = true;
+      }
+
+      // callback with needed arguments
+      callback( coords, address, choicesLeft );
     });
   }
 }
 
 function restoreOptions() {
-  $("#optHome").val(localStorage.home_address);
-  $("#optWork").val(localStorage.work_address);
-  $("#optCity").val(localStorage.city_address); 
+  for(var i in PLACES) {
+    var place = PLACES[i];
+    $('#opt_' + place).val(localStorage[place + '_address']);
+  }
 }
 
 function refreshRoutes() {
@@ -239,27 +258,16 @@ function refreshRoutes() {
   getCurrentLocation( function(currentCoords) {
 
     getPositionAddress(currentCoords);
-  
-    // Fill the content of the Home page with the routes
-    if(localStorage.home_coords) {
-      var destination = localStorage.home_coords.split(',')
-      var home = $('#home [data-role="content"]');
-      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], home);
-    }
-    
-    // Fill the content of the Work page with the routes
-    if(localStorage.work_coords) {
-      var destination = localStorage.work_coords.split(',')
-      var work = $('#work [data-role="content"]');
-      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], work);
-    }
-    
-    // Fill the content of the City page with the routes
-    if(localStorage.city_coords) {
-      var destination = localStorage.city_coords.split(',')
-      var city = $('#city [data-role="content"]');
-      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], city);
-    }
+
+    for (var i in PLACES) {
+      var place = PLACES[i];
+
+      if(localStorage[place + '_coords']) {
+        var destination = localStorage[place + '_coords'].split(',')
+        var page = $('#' + place + ' [data-role="content"]');
+        getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
+      }
+    };
   });
 }
 
@@ -269,19 +277,17 @@ $(document).bind('pageinit', function() {
       
   handlebarsInit();
   
-  // Bindings for options
-  $("#optButton").bind("click", function (event) {    
-    restoreOptions(); 
-  });
+  restoreOptions(); //DEBUG does not fire..
 
   // Bindings for options save
-  $("#saveOpt").bind("click", function (event) {
+  $("#opt_save").bind("click", function (event) {
+    event.preventDefault();
     saveOptions();
   });
   
   // Bindings for options  cancel
-  $("#cancelOpt").bind("click", function (event) {    
-    restoreOptions(); 
+  $("#opt_cancel").bind("click", function (event) {    
+    restoreOptions();
   });
 
   refreshRoutes();    

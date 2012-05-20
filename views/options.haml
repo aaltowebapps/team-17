@@ -1,11 +1,14 @@
-%header(data-role = "header" data-position="inline")
-	%a(href = "#home" data-icon="delete" data-rel="back" id="cancelOpt") Cancel
+%header{:data => {:role => 'header', :position => 'inline'}}
+	%a#opt_cancel{:href => '#', :data => {:icon => 'delete', :rel => 'back'}} Cancel
 	%h1 Options
-	%a(href = "#home" data-icon="check" data-theme="b" id="saveOpt") Save
+	%a#opt_save{:href => '#', :data => {:icon => 'check', :theme => 'b'}} Save
 	
-%section(data-role="content")
-	%form
+%section{:data => {:role => 'content'}}
+	%form#opt_form
 		%h3 Addresses
-		%input(type = "text" name="home" id="optHome" placeholder="Home Address")
-		%input(type = "text" name="work" id="optWork" placeholder = "Work Address")
-		%input(type = "text" name="city" id="optCity" placeholder = "City Address")
+		%label{:for => 'opt_home'} Home
+		%input{:type => 'text', :name => 'home', :id => 'opt_home', :placeholder => 'Home Address'}
+		%label{:for => 'opt_work'} Work
+		%input{:type => 'text', :name => 'work', :id => 'opt_work', :placeholder => 'Work Address'}
+		%label{:for => 'opt_city'} City
+		%input{:type => 'text', :name => 'city', :id => 'opt_city', :placeholder => 'City Address'}
