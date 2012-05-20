@@ -3,6 +3,7 @@ var Templates = {};
 var HOME = 'home';
 var WORK = 'work';
 var CITY = 'city';
+var PLACES = [HOME, WORK, CITY];
 
 // returns meters if less than 1 km, otherwise km with one decimal
 function formatDistance(m) {
@@ -148,21 +149,21 @@ function getRoutes(fromLong, fromLat, toLong, toLat, page) {
 }
 
 // Get the name of your current position
-function getPositionAddress(type) {
-  getCurrentLocation( function (coords) {
-    $.getJSON('/reittiopas',
-      { request: 'reverse_geocode',
-        format: 'json',
-        epsg_in: 'wgs84',
-        epsg_out: 'wgs84',
-        coordinate: coords.longitude + ',' + coords.latitude,
-      }, function (json) {
-        json.type = type;
-        // add routes to page
-        var address = $('#' + type + ' .address');
-        var content = Templates.fromToHeader(json);
-        address.html(content).trigger('create');
-    });
+function getPositionAddress(coords) {
+  $.getJSON('/reittiopas',
+  { request: 'reverse_geocode',
+    format: 'json',
+    epsg_in: 'wgs84',
+    epsg_out: 'wgs84',
+    coordinate: coords.longitude + ',' + coords.latitude,
+  }, function (json) {
+    // add place names to pages
+    for(var i in PLACES) {
+      json.type = PLACES[i];
+      var address = $('#' + PLACES[i] + ' .address');
+      var content = Templates.fromToHeader(json);
+      address.html(content).trigger('create');
+    }
   });
 }
 
@@ -241,7 +242,6 @@ function refreshRoutes() {
     if(localStorage.home_coords) {
       var destination = localStorage.home_coords.split(',')
       var home = $('#home [data-role="content"]');
-      getPositionAddress(HOME);
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], home);
     }
     
@@ -249,7 +249,6 @@ function refreshRoutes() {
     if(localStorage.work_coords) {
       var destination = localStorage.work_coords.split(',')
       var work = $('#work [data-role="content"]');
-      getPositionAddress(WORK);
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], work);
     }
     
@@ -257,9 +256,10 @@ function refreshRoutes() {
     if(localStorage.city_coords) {
       var destination = localStorage.city_coords.split(',')
       var city = $('#city [data-role="content"]');
-      getPositionAddress(CITY);
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], city);
     }
+
+    getPositionAddress(currentCoords);
 
   });
 }
