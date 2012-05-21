@@ -186,8 +186,9 @@ function saveOptions() {
 
       address = $('#opt_' + place).val();
       if( address != localStorage[place + '_address'] ) {
-        resolveAddress( address, place, function ( coords, address, choicesLeft ) {
-          storeAddress(coords, address, place);
+        var storePlace = place;
+        resolveAddress( address, storePlace, function ( coords, address, choicesLeft ) {
+          storeAddress(coords, address, storePlace);
         });
       }
 
@@ -276,7 +277,7 @@ $(document).bind('pageinit', function() {
       
   handlebarsInit();
   
-  restoreOptions(); //DEBUG does not fire..
+  restoreOptions();
 
   // Bindings for options save
   $("#opt_save").bind("click", function (event) {
