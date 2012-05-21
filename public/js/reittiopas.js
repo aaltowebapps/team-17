@@ -278,13 +278,13 @@ $(document).ready( function() {
   restoreOptions();
 
   // Stay on page and save options
-  $("#opt_save").bind("click", function (event) {
+  $("#opt_save").bind("vclick", function (event) {
     event.preventDefault();
     saveOptions();
   });
   
   // Restore options when canceled
-  $("#opt_cancel").bind("click", function (event) {    
+  $("#opt_cancel").bind("vclick", function (event) {    
     restoreOptions();
   });
 
@@ -294,11 +294,11 @@ $(document).ready( function() {
   });
 
   // Refresh on buttons
-  $(document).delegate('#btn_home', 'click', function(event){
+  $(document).delegate('#btn_home', 'vclick', function(event){
       refreshRoute(HOME);
-  }).delegate('#btn_work', 'click', function(event){
+  }).delegate('#btn_work', 'vclick', function(event){
       refreshRoute(WORK);
-  }).delegate('#btn_city', 'click', function(event){
+  }).delegate('#btn_city', 'vclick', function(event){
       refreshRoute(CITY);
   });
 });
