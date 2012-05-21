@@ -230,7 +230,6 @@ function resolveAddress( address , place , callback ){
       else {
         json.place = place;
         var addressList = Templates.addressList(json);
-        console.log('double? ' + place); //DEBUG
         $('#opt_' + place).replaceWith(addressList);
         $('#opt_' + place).selectmenu();
 

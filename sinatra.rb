@@ -32,5 +32,10 @@ class ReittiSuperDial < Sinatra::Base
   			send_file File.join(settings.public_folder, 'sampleroute.json')
 		end
 	end
+
+	get '/manifest.appcache' do
+		headers 'Content-Type' => 'text/cache-manifest'
+		Manifesto.cache :excludes => ['img/poster/', 'img/40px/', 'sampleroute.json'], :network_includes => ['/reittiopas', 'http://api.reittiopas.fi', '*']
+	end
 	
 end
