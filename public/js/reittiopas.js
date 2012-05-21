@@ -263,6 +263,10 @@ function refreshRoute(place) {
       var destination = localStorage[place + '_coords'].split(',')
       var page = $('#' + place + ' [data-role="content"]');
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
+    } else { // demo location
+     // var destination = [24.9313359511,60.1687553335];
+     // var page = $('#' + place + ' [data-role="content"]');
+     // getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
     }
   });
 }
@@ -301,4 +305,12 @@ $(document).ready( function() {
   }).delegate('#btn_city', 'vclick', function(event){
       refreshRoute(CITY);
   });
+
+  for(var i in PLACES) {
+    var place = PLACES[i];
+    if(!localStorage[place + '_coords']) {
+      localStorage[place + '_address'] = 'Demo location';
+      localStorage[place + '_coords'] = '24.9313359511,60.1687553335';
+    }
+  }
 });
