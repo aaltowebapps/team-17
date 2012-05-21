@@ -253,42 +253,52 @@ function restoreOptions() {
   }
 }
 
-function refreshRoutes() {
+function refreshRoute(place) {
     // get gps location
   getCurrentLocation( function(currentCoords) {
 
     getPositionAddress(currentCoords);
 
-    for (var i in PLACES) {
-      var place = PLACES[i];
-
-      if(localStorage[place + '_coords']) {
-        var destination = localStorage[place + '_coords'].split(',')
-        var page = $('#' + place + ' [data-role="content"]');
-        getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
-      }
-    };
+    if(localStorage[place + '_coords']) {
+      var destination = localStorage[place + '_coords'].split(',')
+      var page = $('#' + place + ' [data-role="content"]');
+      getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
+    }
   });
 }
 
 
 // on page init
-$(document).bind('pageinit', function() {
-      
+$(document).ready( function() {
+  
+  console.log('pageinit'); //DEBUG
+
   handlebarsInit();
   
   restoreOptions();
 
-  // Bindings for options save
+  // Stay on page and save options
   $("#opt_save").bind("click", function (event) {
     event.preventDefault();
     saveOptions();
   });
   
-  // Bindings for options  cancel
+  // Restore options when canceled
   $("#opt_cancel").bind("click", function (event) {    
     restoreOptions();
   });
 
-  refreshRoutes();    
+  // Restore when opening options
+  $("#options").bind('pagebeforeshow', function (event) {    
+    restoreOptions();
+  });
+
+  // Refresh on buttons
+  $(document).delegate('#btn_home', 'click', function(event){
+      refreshRoute(HOME);
+  }).delegate('#btn_work', 'click', function(event){
+      refreshRoute(WORK);
+  }).delegate('#btn_city', 'click', function(event){
+      refreshRoute(CITY);
+  });
 });
