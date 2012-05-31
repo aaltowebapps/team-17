@@ -257,16 +257,16 @@ function refreshRoute(place) {
     // get gps location
   getCurrentLocation( function(currentCoords) {
 
-    getPositionAddress(currentCoords);
-
     if(localStorage[place + '_coords']) {
+      getPositionAddress(currentCoords);
+
       var destination = localStorage[place + '_coords'].split(',')
       var page = $('#' + place + ' [data-role="content"]');
       getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
-    } else { // demo location
-     // var destination = [24.9313359511,60.1687553335];
-     // var page = $('#' + place + ' [data-role="content"]');
-     // getRoutes(currentCoords.longitude, currentCoords.latitude, destination[0], destination[1], page);
+    } else { 
+     var address = $('#' + place + ' .address');
+     var content = $('<h4>').html('You should add an address for this destination under <a href="#options">Options</a>');
+     address.html(content).trigger('create');
     }
   });
 }
@@ -275,8 +275,6 @@ function refreshRoute(place) {
 // on page init
 $(document).ready( function() {
   
-  console.log('pageinit'); //DEBUG
-
   handlebarsInit();
   
   restoreOptions();
@@ -305,12 +303,4 @@ $(document).ready( function() {
   }).delegate('#btn_city', 'vclick', function(event){
       refreshRoute(CITY);
   });
-
-  for(var i in PLACES) {
-    var place = PLACES[i];
-    if(!localStorage[place + '_coords']) {
-      localStorage[place + '_address'] = 'Demo location';
-      localStorage[place + '_coords'] = '24.9313359511,60.1687553335';
-    }
-  }
 });
