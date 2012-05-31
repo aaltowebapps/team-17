@@ -296,11 +296,11 @@ $(document).ready( function() {
   });
 
   // Refresh on buttons
-  $(document).delegate('#btn_home', 'vclick', function(event){
+  $(document).delegate('#btn_home', 'vmousedown', function(event){
       refreshRoute(HOME);
-  }).delegate('#btn_work', 'vclick', function(event){
+  }).delegate('#btn_work', 'vmousedown', function(event){
       refreshRoute(WORK);
-  }).delegate('#btn_city', 'vclick', function(event){
+  }).delegate('#btn_city', 'vmousedown', function(event){
       refreshRoute(CITY);
   });
 });
